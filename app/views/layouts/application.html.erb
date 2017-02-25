@@ -10,13 +10,28 @@
   </head>
 
   <body>
-
-    <li>
-      <%= link_to "Home", welcome_index_path %>
-    </li>
-    <li>
-      <%= link_to "About", welcome_about_path %>
-    </li>
+    <div class="row">
+      <div class="col-md-4">
+        <li>
+          <%= link_to "Home", welcome_index_path %>
+        </li>
+        <li>
+          <%= link_to "About", welcome_about_path %>
+        </li>
+      </div>
+      <div class="col-md-4">
+        <% if user_signed_in? %>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %>
+        <% end %>
+      </div>
+    </div>
     <%= yield %>
+
+<!-- Flash messages recommended by Devise -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
   </body>
 </html>
