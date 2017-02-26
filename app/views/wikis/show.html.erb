@@ -1,0 +1,10 @@
+<h1>Wiki Show</h1>
+
+<h3><%= @wiki.title %></h3>
+
+<%= @wiki.body %>
+
+<p>
+<%= link_to "Edit Wiki", edit_wiki_path, class: 'btn btn-success' %>
+<%= link_to "Delete Wiki", @wiki, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'} %>
+</p>

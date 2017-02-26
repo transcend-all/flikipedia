@@ -16,6 +16,7 @@ group :development do
     gem 'sqlite3'
     gem 'spring-watcher-listen', '~> 2.0.0'
     gem 'listen', '~> 3.0.5'
+    gem 'web-console', '>= 3.3.0'
 end
 
 gem 'sass-rails', '~> 5.0'
@@ -28,13 +29,13 @@ gem 'figaro'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem 'web-console', '>= 3.3.0'
   gem 'spring'
   gem 'rspec-rails'
   gem 'shoulda'
   gem 'faker'
   gem 'factory_girl_rails'
   gem 'pry-rails'
+  gem 'rails-controller-testing'
 end
 
 gem 'puma', '~> 3.0'
