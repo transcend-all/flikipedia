@@ -3,6 +3,10 @@ class ChargesController < ApplicationController
   def create
 
     @amount = 10_00
+    @user = current_user
+
+    @user.update_attribute :role, "premium"
+    @user.save!
 
     customer = Stripe::Customer.create(
       email: current_user.email,
@@ -16,8 +20,8 @@ class ChargesController < ApplicationController
       currency: 'usd',
     )
 
-    flash[:notice] = "Thanks for all the money."
-    redirect_to wikis_path
+    flash[:notice] = "Thanks for subscribing!"
+    redirect_to welcome_index_path
 
     rescue Stripe::CardError => e
       flash[:alert] = e.message

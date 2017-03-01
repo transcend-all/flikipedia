@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   resources :charges, only: [:new, :create]
 
+  get 'users/destroy'
+
+  get 'users/show'
+
   get 'welcome/index'
 
   get 'welcome/about'
