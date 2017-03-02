@@ -36,6 +36,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'rails-controller-testing'
+  gem 'better_errors'
 end
 
 gem 'puma', '~> 3.0'
@@ -44,3 +45,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'pundit'
 gem 'stripe'
+gem 'redcarpet'

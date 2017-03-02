@@ -31,6 +31,7 @@ class WikisController < ApplicationController
   def show
     @wiki = Wiki.find(params[:id])
     @user = current_user
+    @body = Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(@wiki.body)
   end
 
   def edit
