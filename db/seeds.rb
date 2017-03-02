@@ -20,7 +20,8 @@ end
   Wiki.create!(
     title: Faker::Lorem.sentences,
     body: Faker::Lorem.paragraph,
-    private: true
+    private: true,
+    user_id: 4
   )
 
 end

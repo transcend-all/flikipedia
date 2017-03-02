@@ -4,6 +4,10 @@
 
 <% @wikis.each do |wiki| %>
 
-<%= link_to wiki.title, wiki %><br>
+  <% if wiki.private? %>
+  <b><%= link_to wiki.title, wiki %></b> - Private<br>
+  <% else %>
+  <%= link_to wiki.title, wiki %><br>
+  <% end %>
 
 <% end %>
